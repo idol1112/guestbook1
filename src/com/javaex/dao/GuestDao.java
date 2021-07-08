@@ -55,7 +55,7 @@ public class GuestDao {
 		}
 
 		// 방명록 추가
-		public int personInsert(GuestVo guestVo) {
+		public int guestInsert(GuestVo guestVo) {
 			int count = 0;
 			getConnection();
 
@@ -126,11 +126,12 @@ public class GuestDao {
 				while (rs.next()) {
 					int no = rs.getInt("no");
 					String name = rs.getString("name");
+					String password = rs.getString("password");
 					String regDate = rs.getString("reg_date");
 					String content = rs.getString("content");
 					
 
-					GuestVo guestVo = new GuestVo(no, name, regDate, content);
+					GuestVo guestVo = new GuestVo(no, name, password, regDate, content);
 					guestList.add(guestVo);
 				}
 

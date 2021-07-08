@@ -10,7 +10,15 @@ public class GuestVo {
 	private String regDate;
 	
 	//생성자
-	public GuestVo() {
+	public GuestVo(int no) {
+		this.no = no;
+	}
+	
+	public GuestVo(String name, String password, String content) {
+		super();
+		this.name = name;
+		this.password = password;
+		this.content = content;
 	}
 	
 	public GuestVo(int no, String name, String regDate, String content) {
@@ -20,8 +28,8 @@ public class GuestVo {
 		this.content = content;
 		this.regDate = regDate;
 	}
-	
-	public GuestVo(int no, String name, String password, String content, String regDate) {
+
+	public GuestVo(int no, String name, String password, String regDate, String content) {
 		this.no = no;
 		this.name = name;
 		this.password = password;
